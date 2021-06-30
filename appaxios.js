@@ -13,50 +13,22 @@ export default class App extends Component {
     }
 
     // Mount User Method
-    // componentDidMount() {
-    //     this.getGithubUser()
-    // }
+    componentDidMount() {
+        this.getGithubUser()
+    }
 
-   // Get Api Users
-    // getGithubUser = async () => {
-    //     try {
-    //         const response = await Axios.get(`https://api.github.com/users?since=135`)
-    //         // const response = await Axios.get(`https://api.themoviedb.org/3/movie/550?api_key=e727655a9afab52dc2baa16622f7fae6`)
-    //         console.log(response)
-    //         this.setState({ isError: false, isLoading: false, data: response.data })
+    //   Get Api Users
+    getGithubUser = async () => {
+        try {
+            const response = await Axios.get(`https://api.github.com/users?since=135`)
+            // const response = await Axios.get(`https://api.themoviedb.org/3/movie/550?api_key=e727655a9afab52dc2baa16622f7fae6`)
+            this.setState({ isError: false, isLoading: false, data: response.data })
 
-    //     } catch (error) {
-    //         this.setState({ isLoading: false, isError: true })
-    //     }
-    // }
-
-
-
-        // INI SCRIPT YANG DI RUBAH
-        componentDidMount() {
-          this.get ()
+        } catch (error) {
+            this.setState({ isLoading: false, isError: true })
         }
+    }
 
-        get = async () => {
-          try {
-            const response = await Axios.get('https://api.themoviedb.org/3/movie/now_playing?api_key=e727655a9afab52dc2baa16622f7fae6')
-            // this.setState({isError: false, isLoading: false, data: response.data})
-          
-          } catch (error) {
-              this.setState({isLoading: false, isError: true})
-          }
-        }
-
-  //     componentDidMount() {
-  //   axios
-  //     .get(
-  //       `https://api.themoviedb.org/3/movie/now_playing?api_key=e727655a9afab52dc2baa16622f7fae6`
-  //     )
-  //     .then((res) => {
-  //       const data = res.data.results;
-  //       this.setState({ data });
-  //     });
-  // }
 
 
     render() {
