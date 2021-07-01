@@ -10,7 +10,7 @@ import {
 } from "react-native";
 import Axios from "axios";
 
-export default class MovieMain extends Component {
+export default class NowPlaying extends Component {
   constructor(props) {
     super(props);
     this.state = {
